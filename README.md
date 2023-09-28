@@ -6,7 +6,7 @@
 
 <a href="https://www.youtube.com/@Alaydriem"><img src="https://raw.githubusercontent.com/alaydriem/bedrock-material-list/master/docs/subscribe.png" width="140"/></a>
 
-<a href= https://discord.gg/NMvmk9zKyP"><img src="https://raw.githubusercontent.com/alaydriem/creator-challenge-pack/master/pack/rp/pack_icon.png" width="140"/></a>
+<a href="https://discord.gg/NMvmk9zKyP"><img src="https://raw.githubusercontent.com/alaydriem/creator-challenge-pack/master/pack/rp/pack_icon.png" width="140"/></a>
 
   <p>
     <strong>Behavior & Resource Pack for Minecraft Creator Challenges</strong>
