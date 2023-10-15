@@ -71,8 +71,33 @@ impl Config {
     pub async fn run<'a>(&'a self, _cfg: &Arc<Command>) {
         let bp_path = Path::new("pack/bp");
         let rp_path = Path::new("pack/rp");
-
+        let src = Path::new("src");
         let paths = vec![bp_path, rp_path];
+
+        let package_name = env!("CARGO_PKG_NAME")
+            .to_string();
+
+        let description = env!("CARGO_PKG_DESCRIPTION")
+            .to_string();
+
+        let major = env!("CARGO_PKG_VERSION_MAJOR")
+            .to_string()
+            .parse::<i64>()
+            .unwrap();
+
+        let minor = env!("CARGO_PKG_VERSION_MINOR")
+            .to_string()
+            .parse::<i64>()
+            .unwrap();
+
+        let patch = env!("CARGO_PKG_VERSION_PATCH")
+            .to_string()
+            .parse::<i64>()
+            .unwrap();
+
+        let mut txt = fs::read_to_string(src.join("js/version.js")).unwrap();
+        txt = txt.replace("__VERSION__", format!("{}.{}.{}", major, minor, patch).as_ref());
+        fs::write(bp_path.join("scripts/version.js"), txt).unwrap();
 
         for path in paths {
             // Modify the version from the cargo.toml manifest
@@ -91,18 +116,6 @@ impl Config {
                 Err(err) => panic!("Could not read JSON file: {}", err.to_string()),
             };
 
-            let major = env!("CARGO_PKG_VERSION_MAJOR")
-                .to_string()
-                .parse::<i64>()
-                .unwrap();
-            let minor = env!("CARGO_PKG_VERSION_MINOR")
-                .to_string()
-                .parse::<i64>()
-                .unwrap();
-            let patch = env!("CARGO_PKG_VERSION_PATCH")
-                .to_string()
-                .parse::<i64>()
-                .unwrap();
             json.header.version = vec![major, minor, patch];
 
             for (i, _) in json.modules.clone().iter().enumerate() {
@@ -111,7 +124,7 @@ impl Config {
 
             json.header.description = format!(
                 "{} ({}.{}.{})",
-                "Minecraft Bedrock Packs for Creator Challenge", major, minor, patch
+                description, major, minor, patch
             );
 
             match json.dependencies {
@@ -119,7 +132,6 @@ impl Config {
                     let mut deps = Vec::<Dependency>::new();
                     for (_, d) in dependencies.clone().iter().enumerate() {
                         if d.module_name.is_some() {
-                            println!("{:?}", d.module_name);
                             deps.push(d.clone().to_owned());
                         } else {
                             let dep = Dependency {
@@ -143,6 +155,7 @@ impl Config {
             let manifest_canon_path = path.join("manifest.json").canonicalize().unwrap();
 
             fs::write(manifest_canon_path, buf).unwrap();
+            
             // Create the mcpack
             let p = path.to_str().unwrap();
             match Config::doit(p, &format!("{}.mcpack", p), zip::CompressionMethod::Stored) {
@@ -154,14 +167,14 @@ impl Config {
         // Rename the packs with the correct version
         match std::fs::rename(
             &format!("{}.mcpack", &bp_path.to_str().unwrap()),
-            format!("creator_challenge_bp_{}.mcpack", &env!("CARGO_PKG_VERSION")),
+            format!("{}_bp_{}.mcpack", package_name, &env!("CARGO_PKG_VERSION")),
         ) {
             Ok(_) => {}
             Err(error) => panic!("{}", error.to_string()),
         };
         match std::fs::rename(
             &format!("{}.mcpack", &rp_path.to_str().unwrap()),
-            format!("creator_challenge_rp_{}.mcpack", &env!("CARGO_PKG_VERSION")),
+            format!("{}_rp_{}.mcpack", package_name, &env!("CARGO_PKG_VERSION")),
         ) {
             Ok(_) => {}
             Err(error) => panic!("{}", error.to_string()),

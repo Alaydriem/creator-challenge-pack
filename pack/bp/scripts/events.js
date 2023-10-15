@@ -26,11 +26,11 @@ export class Events {
         this.player.name +
         '" slot.armor.chest 0 golden_chestplate'
     );
+    this.player.runCommand('give "' + this.player.name + '" golden_carrot 64');
+    this.player.runCommand('give "' + this.player.name + '" diamond_pickaxe 1');
+    this.player.runCommand('give "' + this.player.name + '" cobblestone 64');
     this.player.runCommand('give "' + this.player.name + '" obsidian 10');
     this.player.runCommand('give "' + this.player.name + '" flint_and_steel 1');
-    this.player.runCommand('give "' + this.player.name + '" diamond_pickaxe 1');
-    this.player.runCommand('give "' + this.player.name + '" golden_carrot 64');
-    this.player.runCommand('give "' + this.player.name + '" cobblestone 64');
   }
 
   timer(time) {
