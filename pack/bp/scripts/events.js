@@ -26,18 +26,52 @@ export class Events {
         this.player.name +
         '" slot.armor.chest 0 golden_chestplate'
     );
-    this.player.runCommand('give "' + this.player.name + '" golden_carrot 64');
-    this.player.runCommand('give "' + this.player.name + '" diamond_pickaxe 1');
-    this.player.runCommand('give "' + this.player.name + '" cobblestone 64');
-    this.player.runCommand('give "' + this.player.name + '" obsidian 10');
-    this.player.runCommand('give "' + this.player.name + '" flint_and_steel 1');
+
+    const items = {
+      golden_carrot: 64,
+      diamond_pickaxe: 1,
+      cobblestone: 64,
+      obsidian: 12,
+      flint_and_steel: 1,
+    };
+    this.give_player_items(items);
+  }
+
+  saddle_up() {
+    this.player.runCommand(
+      'replaceitem entity "' + this.player.name + '"slot.armor.chest 0 elytra'
+    );
+
+    const items = {
+      oak_log: 64,
+      lead: 64,
+      firework_rocket: 128,
+      bread: 64,
+      carrot_on_a_stick: 1,
+      oak_fence: 64,
+      fence_gate: 64,
+      oak_boat: 1,
+      saddle: 15,
+    };
+
+    this.give_player_items(items);
+  }
+
+  give_player_items(items) {
+    Object.entries(items).forEach((entry) => {
+      const [item, amount] = entry;
+      this.player.runCommand(
+        'give "' + this.player.name + '" ' + item + " " + amount
+      );
+    });
   }
 
   timer(time) {
     let main_clock = time * 60;
     this.player.runCommand("difficulty hard");
-
     this.player.runCommand("gamemode survival");
+    this.player.runCommand("time set 0");
+
     const this_thing = this;
     const intervalId = system.runInterval((e) => {
       if (main_clock == 0) {

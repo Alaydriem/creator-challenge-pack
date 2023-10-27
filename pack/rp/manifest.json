@@ -2,12 +2,12 @@
   "format_version": 2,
   "header": {
     "name": "Alaydriem's Creator Challenge Pack",
-    "description": "Minecraft Bedrock Packs for Creator Challenge (23.10.6)",
+    "description": "Minecraft Bedrock Packs for Creator Challenge (23.11.2)",
     "uuid": "20a36865-747e-4c38-8077-ea9228c2bd5d",
     "version": [
       23,
-      10,
-      6
+      11,
+      2
     ],
     "min_engine_version": [
       1,
@@ -21,8 +21,8 @@
       "uuid": "d017da65-10ff-440c-b1d9-2d2d71ff5f1d",
       "version": [
         23,
-        10,
-        6
+        11,
+        2
       ]
     }
   ],

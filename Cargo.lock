@@ -183,7 +183,7 @@ dependencies = [
 
 [[package]]
 name = "creator-challenge-pack"
-version = "23.10.6"
+version = "23.11.2"
 dependencies = [
  "anyhow",
  "clap",

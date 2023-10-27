@@ -23,6 +23,11 @@ world.beforeEvents.chatSend.subscribe(async (event) => {
             ch.nether_mob_chop(cmd[2] ?? "sword");
           });
           break;
+        case "saddle-up":
+          system.run(() => {
+            ch.saddle_up();
+          });
+          break;
         default:
           break;
       }

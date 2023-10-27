@@ -78,14 +78,6 @@ You can start this challenge by running:
 !setup nether-mob-chop <sword|axe>
 ```
 
-You'll immediately be given the following items and have them be equipped
-(1) diamond sword or axe (player preference)
-(1) golden T-shirt
-(1) shield
-(1) diamond pick
-(64) golden carrots
-(64) cobblestone
-
 RULES:
 
 1. Build a nether portal and light it
@@ -97,5 +89,26 @@ RULES:
 7. After 10 minutes, tally up your score using the following system; First of each item scores 10 pts. Every other item scores 1 point.
    Example: you have 5 rotten flesh, 1 ghast tear and 2 bones. You would score 14 point for the flesh, 10 points for the tear and 11 points for the bones for a total of 35 points.
 8. Exclusions: no trading allowed. No items from chests allowed. All items must come from combat.
-
 9. All items must be in your inventory when the time runs out to be counted.
+
+### Saddle Up!
+
+corral as many ridable mobs as you can into a fenced area
+
+You can start this challenge by running:
+
+```
+!setup saddle-up
+```
+
+RULES:
+
+1. Give yourself the starter items. At any point in the challenge, if you need more saddles, use the give command. `/give @p minecraft:saddle 5`
+
+2. Run `!start-timer 10` to start the challenge.
+
+3. Tame, saddle and corral as many rideable mobs as possible before sunset. Mobs must be inside the corral you build to be counted. Corral may be as big or as small as you like. rideable mobs include: horse, donkey, llama, camel, pig
+
+4. After time has run out, tally up your score using the following system;
+   - First of each mob type scores 10 pts. Every other mob of that type scores 1 point.
+   - Example: you have 3 horsies, 1 donkey and 5 little piggies (going wee, wee, wee all the way home). You would score 12 point for the horses, 10 points for the donkey and 14 points for the pigs for a total of 36 points.

@@ -3,7 +3,7 @@ name = "creator-challenge-pack"
 authors = ["Charles R. Portwood II <charlesportwoodii@erianna.com>"]
 description = "Minecraft Bedrock Packs for Creator Challenge"
 repository = "https://github.com/alaydriem/creator-challenge-pack"
-version = "23.10.6"
+version = "23.11.2"
 edition = "2021"
 
 [registries.crates-io]
