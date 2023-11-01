@@ -91,14 +91,14 @@ RULES:
 8. Exclusions: no trading allowed. No items from chests allowed. All items must come from combat.
 9. All items must be in your inventory when the time runs out to be counted.
 
-### Saddle Up!
+### Round 'em Up!
 
 corral as many ridable mobs as you can into a fenced area
 
 You can start this challenge by running:
 
 ```
-!setup saddle-up
+!setup round-em-up
 ```
 
 RULES:

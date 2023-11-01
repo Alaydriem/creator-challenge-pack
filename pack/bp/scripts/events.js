@@ -48,9 +48,6 @@ export class Events {
       firework_rocket: 128,
       bread: 64,
       carrot_on_a_stick: 1,
-      oak_fence: 64,
-      fence_gate: 64,
-      oak_boat: 1,
       saddle: 15,
     };
 

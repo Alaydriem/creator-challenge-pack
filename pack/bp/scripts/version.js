@@ -1,6 +1,6 @@
 "use strict";
 
-const VERSION = "23.11.2";
+const VERSION = "23.11.3";
 
 export class Version {
   constructor(event, player) {
