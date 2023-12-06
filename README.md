@@ -68,6 +68,42 @@ When the timer ends, the gamemode will be reset into peaceful to despawn all mob
 
 The following challenges are available:
 
+### Grave Intentions
+
+GOAL:
+The goal is to die in as many different ways as possible before the moon is right above your head. The person with the most unique deaths wins!
+
+RULES:
+
+- Create a brand new Hard world with this datapack
+- Run the following commands to start:
+  ```
+  /give @s bed
+  !start-timer 14000 ticks 0
+  ```
+
+### Round 'em Up!
+
+Corral as many ridable mobs as you can into a fenced area
+
+You can start this challenge by running:
+
+```
+!setup round-em-up
+```
+
+RULES:
+
+1. Give yourself the starter items. At any point in the challenge, if you need more saddles, use the give command. `/give @p minecraft:saddle 5`
+
+2. Run `!start-timer 10` to start the challenge.
+
+3. Tame, saddle and corral as many rideable mobs as possible before sunset. Mobs must be inside the corral you build to be counted. Corral may be as big or as small as you like. rideable mobs include: horse, donkey, llama, camel, pig
+
+4. After time has run out, tally up your score using the following system;
+   - First of each mob type scores 10 pts. Every other mob of that type scores 1 point.
+   - Example: you have 3 horsies, 1 donkey and 5 little piggies (going wee, wee, wee all the way home). You would score 12 point for the horses, 10 points for the donkey and 14 points for the pigs for a total of 36 points.
+
 ### Nether Mob Chop
 
 Goal: Collect as many mob drops in 10 minutes as you can.
@@ -90,25 +126,3 @@ RULES:
    Example: you have 5 rotten flesh, 1 ghast tear and 2 bones. You would score 14 point for the flesh, 10 points for the tear and 11 points for the bones for a total of 35 points.
 8. Exclusions: no trading allowed. No items from chests allowed. All items must come from combat.
 9. All items must be in your inventory when the time runs out to be counted.
-
-### Round 'em Up!
-
-corral as many ridable mobs as you can into a fenced area
-
-You can start this challenge by running:
-
-```
-!setup round-em-up
-```
-
-RULES:
-
-1. Give yourself the starter items. At any point in the challenge, if you need more saddles, use the give command. `/give @p minecraft:saddle 5`
-
-2. Run `!start-timer 10` to start the challenge.
-
-3. Tame, saddle and corral as many rideable mobs as possible before sunset. Mobs must be inside the corral you build to be counted. Corral may be as big or as small as you like. rideable mobs include: horse, donkey, llama, camel, pig
-
-4. After time has run out, tally up your score using the following system;
-   - First of each mob type scores 10 pts. Every other mob of that type scores 1 point.
-   - Example: you have 3 horsies, 1 donkey and 5 little piggies (going wee, wee, wee all the way home). You would score 12 point for the horses, 10 points for the donkey and 14 points for the pigs for a total of 36 points.

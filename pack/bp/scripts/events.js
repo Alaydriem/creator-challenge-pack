@@ -63,11 +63,25 @@ export class Events {
     });
   }
 
-  timer(time) {
-    let main_clock = time * 60;
-    this.player.runCommand("difficulty hard");
+  timer(time, unit, start, difficulty) {
+    let main_clock = 0;
+
+    switch (unit) {
+      case "ticks":
+      case "t":
+        main_clock = 0.05 * time;
+        break;
+      case "min":
+      case "m":
+      case "minutes":
+      default:
+        main_clock = time * 60;
+        break;
+    }
+
+    this.player.runCommand("difficulty " + difficulty);
     this.player.runCommand("gamemode survival");
-    this.player.runCommand("time set 0");
+    this.player.runCommand("time set " + start);
 
     const this_thing = this;
     const intervalId = system.runInterval((e) => {
@@ -92,6 +106,11 @@ export class Events {
     }, 20);
 
     return intervalId;
+  }
+
+  clear_timer(intervalId) {
+    this.player.onScreenDisplay.setActionBar("");
+    return system.clearRun(intervalId);
   }
 
   toHHMMSS(time) {
